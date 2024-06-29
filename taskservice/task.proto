@@ -2,13 +2,13 @@ syntax = "proto3";
 option go_package = "./taskpb";
 
 service Taskservice {
-    rpc CreateTask (Request) returns (Responce);
-    rpc GetTask (Responce) returns (Task);
-    rpc UpdateTask (Responce)  returns (UserRequest);
-    rpc DeleteTask (Responce)  returns (UserRequest);
+    rpc CreateTask (Request) returns (Response);
+    rpc GetTask (Response) returns (Task);
+    rpc UpdateTask (Task)  returns (TaskRequest);
+    rpc DeleteTask (Response)  returns (TaskRequest);
 }
 
-message UserRequest{
+message TaskRequest{
     string message = 1;
 }
 
@@ -23,6 +23,6 @@ message Request {
     string assigned = 2;
 }
 
-message Responce {
+message Response {
     int32   id       = 1;
 }

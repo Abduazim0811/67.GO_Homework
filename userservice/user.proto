@@ -4,7 +4,7 @@ option go_package = "./userpb";
 service Userservice {
     rpc CreateUser (Request) returns (Responce);
     rpc GetUser (Responce) returns (User);
-    rpc UpdateUser (Responce)  returns (UserRequest);
+    rpc UpdateUser (User)  returns (UserRequest);
     rpc DeleteUser (Responce)  returns (UserRequest);
 }
 
